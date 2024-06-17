@@ -1,1 +1,1 @@
-[photo](Plan.jpg)
+![photo](Plan.jpg)
