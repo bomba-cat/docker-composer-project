@@ -10,7 +10,7 @@ The passwords are set as a env variable on the host system so the guest systems 
 
 # Plan
 <a><img src="img/Plan.jpg" alt="Error Loading image" width="200"/></a>
-<img src="img/Networks.jpg" alt="Error Loading image" width="200"/>
+<img src="img/Networks.png" alt="Error Loading image" width="200"/>
 
 # Dependence on databases
 
