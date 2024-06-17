@@ -13,8 +13,8 @@ The passwords are set as a env variable on the host system so the guest systems 
 <img src="img/System.png" alt="Error Loading image" height="400">
 
 # Dependence on databases
-- 1. `MYSQL_PASSWORD`:KUZ35_:3434FEfwew*1
-- 2. `MYSQL_ROOT_PASSWORD`:KUZ35_:3434FEfwew*1
+1. `MYSQL_PASSWORD`:KUZ35_:3434FEfwew*1
+2. `MYSQL_ROOT_PASSWORD`:KUZ35_:3434FEfwew*1
 
 # Journal
 . | Jan | Mykhaylo | Bledion
