@@ -9,7 +9,6 @@
 The passwords are set as a env variable on the host system so the guest systems can rely on those
 
 # Plan
-<a><img src="img/Plan.jpg" alt="Error Loading image" height="400"/></a>
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
