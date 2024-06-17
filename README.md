@@ -19,4 +19,4 @@ The passwords are set as a env variable on the host system so the guest systems 
 # Arbeitsjournal
 Name | Jan | Mykhaylo | Bledion
 ---- | --- | -------- | -------
-17.06.2024 | . | . | .
+17.06.2024 | Mein Ziel war es den Code für die Installation von Nextcloud zu schreiben. Ich habe den Code schon fast fertig. Ich muss noch den MySQL Server korrekt aufsetzen. Ich hatte Probleme beim erstellen des Codes, da er nicht richtig ausgeführt wurde. | . | .
