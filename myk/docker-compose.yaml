@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mediawiki:
+    image: mediawiki:latest
+    container_name: mediawiki
+    ports:
+      - "8085:80"
+    environment:
+      - MEDIAWIKI_DB_HOST=db
+      - MEDIAWIKI_DB_NAME=mediawiki
+      - MEDIAWIKI_DB_USER=mediawiki
+      - MEDIAWIKI_DB_PASSWORD=Password123
+    volumes:
+      - mediawiki_data:/var/www/html/images
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    container_name: mediawiki_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=KUZ35_:3434FEfwew*1
+      - MYSQL_DATABASE=mediawiki
+      - MYSQL_USER=mediawiki
+      - MYSQL_PASSWORD=Password123
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  mediawiki_data:
+  db_data:
