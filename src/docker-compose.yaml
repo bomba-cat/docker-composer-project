@@ -1,0 +1,10 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:
+
+volumes:
+  gitlab:
+
+networks:
+  default:
+    name: net
