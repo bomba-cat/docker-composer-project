@@ -3,6 +3,7 @@
 - mysql:latest
 - nextcloud:latest
 - mediawiki:latest
+- portainer:latest
 
 # Passwörter
 The passwords are set as a env variable on the host system so the guest systems can rely on those
