@@ -1,1 +1,1 @@
-<img src="Plan.jpg" alt="Error Loading image" width="50"/>
+<img src="Plan.jpg" alt="Error Loading image" width="200"/>
