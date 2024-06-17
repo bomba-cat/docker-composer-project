@@ -2,7 +2,7 @@
 - gitlab/gitlab-ce:laters
 - mysql:latest
 - nextcloud:latest
--
+- mediawiki:latest
 
 # Passwörter
 The passwords are set as a env variable on the host system so the guest systems can rely on those
