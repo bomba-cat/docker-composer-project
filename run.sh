@@ -3,7 +3,7 @@
 read -p "Enter folder: " folder
 
 echo Changing directory..
-cd $folder
+cd $folder | echo Folder does not exist, check wether you made any mistakes and try again!
 
 echo Setting env Variables...
 set MYSQL_ROOT_PASSWORD=KUZ35_:3434FEfwew*1
