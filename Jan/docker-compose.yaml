@@ -32,8 +32,11 @@ services:
 
 volumes:
   nextcloud:
+    name: nextcloud-vol
   db:
+    name: nextcloud-db-vol
 
 networks:
   nextcloud:
+    name: nextcloud-net
     driver: bridge
