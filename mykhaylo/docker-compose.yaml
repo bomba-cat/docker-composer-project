@@ -15,6 +15,11 @@ services:
       - mediawiki_data:/var/www/html/images
     depends_on:
       - db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
 
   db:
     image: mysql:latest
@@ -26,6 +31,11 @@ services:
       - MYSQL_PASSWORD=Password123
     volumes:
       - db_data:/var/lib/mysql
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
 
 volumes:
   mediawiki_data:
