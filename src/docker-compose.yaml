@@ -36,7 +36,7 @@ services:
     ports:
       - 8080:80
     links:
-      - db
+      - nextcloud_db
     volumes:
       - nextcloud:/var/www/html
     environment:
@@ -54,14 +54,14 @@ services:
     ports:
       - "8085:80"
     environment:
-      - MEDIAWIKI_DB_HOST=db
+      - MEDIAWIKI_DB_HOST=mediawiki_db
       - MEDIAWIKI_DB_NAME=mediawiki
       - MEDIAWIKI_DB_USER=mediawiki
-      - MEDIAWIKI_DB_PASSWORD=Password123
+      - MEDIAWIKI_DB_PASSWORD=
     volumes:
       - mediawiki:/var/www/html/images
     depends_on:
-      - db
+      - mediawiki_db
     deploy:
       resources:
         limits:
@@ -75,10 +75,10 @@ services:
     image: mysql:latest
     container_name: mediawiki_db
     environment:
-      - MYSQL_ROOT_PASSWORD=KUZ35_:3434FEfwew*1
+      - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=mediawiki
       - MYSQL_USER=mediawiki
-      - MYSQL_PASSWORD=Password123
+      - MYSQL_PASSWORD=
     volumes:
       - mediawiki_db:/var/lib/mysql
     deploy:
