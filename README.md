@@ -28,6 +28,17 @@ VARIABLE | VALUE | DESCRIPTION
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
 
+# Arbeitsplanung und Aufgabenteilung
+
+## Arbeitsplanung
+In dem Systemdiagramm können wir sehen, dass wir die Anforderungen analysiert und alles auf vier Container aufgeteilt haben. 
+Am Ende werden wir all diese Infrastruktur zusammenbauen, sodass wir sie auf einer Arbeitsmaschine testen können, was die endgültige Testung und Umsetzung des Ganzen vereinfacht.
+
+## Aufgabenteilung
+MediaWiki wurde von Mykhaylo realisiert, NextCloud von Jan und GitLab von Bledion. Portainer haben wir entschieden, am Ende gemeinsam zu machen, und die zugehörigen Datenbanken wird jeder für seinen Container selbst erstellen. 
+
+
+
 # Journal
 . | Jan | Mykhaylo | Bledion
 ---- | --- | -------- | -------
