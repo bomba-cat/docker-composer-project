@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    restart: always
+    ports:
+      - "9000:9000"  # Portainer ist dann über den Port 9000 erreichbar
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
