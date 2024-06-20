@@ -44,3 +44,32 @@ MediaWiki wurde von Mykhaylo realisiert, NextCloud von Jan und GitLab von Bledio
 ---- | --- | -------- | -------
 17.06.2024 | Mein Ziel war es den Code für die Installation von Nextcloud zu schreiben. Ich habe den Code schon fast fertig. Ich muss noch den MySQL Server korrekt aufsetzen. Ich hatte Probleme beim erstellen des Codes, da er nicht richtig ausgeführt wurde. | Ich habe meine Ziele erreicht und eine Docker Compose Datei erstellt, die zwei Images umfasst: MySQL und MediaWiki. Zwar habe ich die Konfiguration noch nicht abschliessend überprüft, aber nach der ersten Ausführung in meiner Linux-Umgebung funktioniert sie einwandfrei.| Ich habe mich mit dem Gitlab auseinander gesetzt und weiss jetzt alles was ich dazu brauche. Ich habe auch einen Run script erstellt um die dockers zu ausführen und schemas gezeichnet
 
+
+# Testkonzept
+
+## 1. Testumfeld und Randbedingungen
+Hardware | Netzwerkeinstellungen | Abhändigkeiten von anderen Systemen
+Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehreren VMs und Container nach Bedarf erstellt werden können. | Wir haben es so eingeebnet, dass es drei Netzwerke sein werden, der Grund dafür ist die Sicherheit, denn es gibt ein Brückennetzwerk, das MediaWiki Nextcloud und Gitlab umfasst, das die innere Kommunikation und zwischen Containern ermöglicht, aber die Datenbanken für MediaWiki und Nextcloud sind voneinander getrennt und können nur mit bestimmten Containern kommunizieren.| -----------
+
+## 2. Testplan
+... | ... | ...
+-------- | ----- | -----------
+
+## 3. Testmittel und -methoden
+... | ... | ...
+-------- | ----- | -----------
+
+## 4. Erwartete Resultate
+... | ... | ...
+-------- | ----- | -----------
+
+## 5. Durchführung und Protokollierung
+... | ... | ...
+-------- | ----- | -----------
+
+
+# Sicherheitskonzept
+
+
+
+
