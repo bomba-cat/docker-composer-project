@@ -16,11 +16,88 @@ services:
     networks:
       - main
 
+  nextcloud_db:
+    image: mysql:latest
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - nextcloud_db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    networks:
+      - nextcloud
+
+  nextcloud:
+    image: nextcloud:latest
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - nextcloud_db
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+    networks:
+      - main
+      - nextcloud
+
+  mediawiki:
+    image: mediawiki:latest
+    container_name: mediawiki
+    ports:
+      - "8085:80"
+    environment:
+      - MEDIAWIKI_DB_HOST=mediawiki_db
+      - MEDIAWIKI_DB_NAME=mediawiki
+      - MEDIAWIKI_DB_USER=mediawiki
+      - MEDIAWIKI_DB_PASSWORD=
+    volumes:
+      - mediawiki:/var/www/html/images
+    depends_on:
+      - mediawiki_db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+    networks:
+      - main
+      - mediawiki
+
+  mediawiki_db:
+    image: mysql:latest
+    container_name: mediawiki_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=mediawiki
+      - MYSQL_USER=mediawiki
+      - MYSQL_PASSWORD=
+    volumes:
+      - mediawiki_db:/var/lib/mysql
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+    networks:
+      - mediawiki
+
 
 volumes:
   gitlab_config:
   gitlab_log:
   gitlab_data:
+  nextcloud:
+  nextcloud_db:
+  mediawiki:
+  mediawiki_db:
 
 networks:
   main:
