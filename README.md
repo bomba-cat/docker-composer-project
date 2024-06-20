@@ -43,7 +43,7 @@ MediaWiki wurde von Mykhaylo realisiert, NextCloud von Jan und GitLab von Bledio
 . | Jan | Mykhaylo | Bledion
 ---- | --- | -------- | -------
 17.06.2024 | Mein Ziel war es den Code für die Installation von Nextcloud zu schreiben. Ich habe den Code schon fast fertig. Ich muss noch den MySQL Server korrekt aufsetzen. Ich hatte Probleme beim erstellen des Codes, da er nicht richtig ausgeführt wurde. | Ich habe meine Ziele erreicht und eine Docker Compose Datei erstellt, die zwei Images umfasst: MySQL und MediaWiki. Zwar habe ich die Konfiguration noch nicht abschliessend überprüft, aber nach der ersten Ausführung in meiner Linux-Umgebung funktioniert sie einwandfrei. | Ich habe mich mit dem Gitlab auseinander gesetzt und weiss jetzt alles was ich dazu brauche. Ich habe auch einen Run script erstellt um die dockers zu ausführen und schemas gezeichnet
-20.06.2024 | Mein Ziel war es den Code von Nextcloud zu vervollständigen. Ich hatte heute keine Probleme bei meinem Teil. Wir müssen nun nur noch das Testkonzept fertig erstellen, sowie kleine Anpassungen an unserem Code vornehmen, damit dieser einwandfrei Funktioniert und allen Anforderungen entspricht. | Text Mykhaylo | Text Bledion
+20.06.2024 | Mein Ziel war es, den Code von Nextcloud zu vervollständigen. Ich hatte heute keine Probleme mit meinem Teil. Wir müssen nun nur noch das Testkonzept fertig erstellen, sowie kleine Anpassungen an unserem Code vornehmen, damit dieser einwandfrei funktioniert und allen Anforderungen entspricht. | Text Mykhaylo | Text Bledion
 24.06.2024 | Text Jan | Text Mykhaylo | Text Bledion
 
 
