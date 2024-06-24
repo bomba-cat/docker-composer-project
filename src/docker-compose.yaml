@@ -138,7 +138,7 @@ services:
     container_name: mediawiki_db
     environment:
       - MYSQL_ROOT_PASSWORD=/run/secrets/password
-      - MYSQL_DATABASE=mediawik
+      - MYSQL_DATABASE=mediawiki
       - MYSQL_USER=mediawiki
       - MYSQL_PASSWORD=/run/secrets/password
     volumes:
