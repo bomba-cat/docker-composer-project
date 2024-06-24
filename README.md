@@ -68,19 +68,19 @@ Hardware | Netzwerkeinstellungen | Abhändigkeiten von anderen Systemen
 Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehreren VMs und Container nach Bedarf erstellt werden können. | Wir haben es so eingeebnet, dass es drei Netzwerke sein werden, der Grund dafür ist die Sicherheit, denn es gibt ein Brückennetzwerk, das MediaWiki Nextcloud und Gitlab umfasst, das die innere Kommunikation und zwischen Containern ermöglicht, aber die Datenbanken für MediaWiki und Nextcloud sind voneinander getrennt und können nur mit bestimmten Containern kommunizieren.| 
 
 ## 2. Testplan
-... | ... | ...
+Test-ID | Ausgeführt von | Datum
 -------- | ----- | -----------
 
 ## 3. Testmittel und -methoden
-... | ... | ...
+Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
 
 ## 4. Erwartete Resultate
-... | ... | ...
+Test-ID | Bemerkung | Erwartete Resultate
 -------- | ----- | -----------
 
 ## 5. Durchführung und Protokollierung
-... | ... | ...
+Test-ID | Eingabe | Resultat
 -------- | ----- | -----------
 
 
