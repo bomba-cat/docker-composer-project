@@ -42,6 +42,8 @@ VARIABLE | VALUE | DESCRIPTION
 
 
 # Arbeitsplanung und Aufgabenteilung
+<img src="https://github.com/mykhaylo-zhovkevych/docker-composer-project/assets/148889468/63d281f2-4ace-41bf-8668-babc5c86171e" height="400" width="auto">
+
 
 ## Arbeitsplanung
 In dem Systemdiagramm können wir sehen, dass wir die Anforderungen analysiert und alles auf vier Container aufgeteilt haben. 
