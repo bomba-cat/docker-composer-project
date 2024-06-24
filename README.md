@@ -70,12 +70,41 @@ Hardware | Netzwerkeinstellungen | Abhändigkeiten von anderen Systemen
 Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehreren VMs und Container nach Bedarf erstellt werden können. | Wir haben es so eingeebnet, dass es drei Netzwerke sein werden, der Grund dafür ist die Sicherheit, denn es gibt ein Brückennetzwerk, das MediaWiki Nextcloud und Gitlab umfasst, das die innere Kommunikation und zwischen Containern ermöglicht, aber die Datenbanken für MediaWiki und Nextcloud sind voneinander getrennt und können nur mit bestimmten Containern kommunizieren.| 
 
 ## 2. Testplan
-Test-ID | Containername | Testinhalt
+Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 -------- | ----- | -----------
-1 | ----- | -----------
-2 | ----- | -----------
-3 | ----- | -----------
-4 | ----- | -----------
+1 | gitlab_config (Gitlab) | Persistenz testen (Volumes)
+2 | gitlab_log (Gitlab) | Persistenz testen (Volumes)
+3 | gitlab_data (Gitlab) | Persistenz testen (Volumes)
+4 | gitlab_db (Gitlab) | Persistenz testen (Volumes)
+5 | gitlab_redis (Gitlab) | Persistenz testen (Volumes)
+6 | nextcloud (Nextcloud) | Persistenz testen (Volumes)
+7 | nextcloud_db (Nextcloud) | Persistenz testen (Volumes)
+8 | mediawiki (Mediawiki) | Persistenz testen (Volumes)
+9 | mediawiki_db (Mediawiki) | Persistenz testen (Volumes)
+10 | portainer_data (Portainer) | Persistenz testen (Volumes)
+11 | main | Netzwerke testen
+12 | gitlab | Netzwerke testen
+13 | nextcloud | Netzwerke testen
+14 | mediawiki | Netzwerke testen
+15 | Gitlab | App testen
+16 | Nextcloud | App testen
+17 | Mediawiki | App testen
+18 | Portainer | App testen
+19 | Gitlab | Benutzer testen (Login)
+20 | Nextcloud | Benutzer testen (Login)
+21 | Mediawiki | Benutzer testen (Login)
+22 | Portainer | Benutzer testen (Login)
+23 | Gitlab | Sicherheit testen (Passwörter)
+24 | Nextcloud | Sicherheit testen (Passwörter)
+25 | Mediawiki | Sicherheit testen (Passwörter)
+26 | Portainer | Sicherheit testen (Passwörter)
+27 | gitlab_db (postgres) | Berechtigungen testen (DB)
+28 | nextcloud_db (MySQL) | Berechtigungen testen (DB)
+29 | mediawiki_db (MySQL) | Berechtigungen testen (DB)
+30 | Gitlab | Ressourcen testen
+31 | Nextcloud | Ressourcen testen
+32 | Mediawiki | Ressourcen testen
+33 | Portainer | Ressourcen testen
 
 ## 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
@@ -84,6 +113,35 @@ Test-ID | Testmittel | Testmethoden
 2 | ----- | -----------
 3 | ----- | -----------
 4 | ----- | -----------
+5 | ----- | -----------
+6 | ----- | -----------
+7 | ----- | -----------
+8 | ----- | -----------
+9 | ----- | -----------
+10 | ----- | -----------
+11 | ----- | -----------
+12 | ----- | -----------
+13 | ----- | -----------
+14 | ----- | -----------
+15 | ----- | -----------
+16 | ----- | -----------
+17 | ----- | -----------
+18 | ----- | -----------
+19 | ----- | -----------
+20 | ----- | -----------
+21 | ----- | -----------
+22 | ----- | -----------
+23 | ----- | -----------
+24 | ----- | -----------
+25 | ----- | -----------
+26 | ----- | -----------
+27 | ----- | -----------
+28 | ----- | -----------
+29 | ----- | -----------
+30 | ----- | -----------
+31 | ----- | -----------
+32 | ----- | -----------
+33 | ----- | -----------
 
 ## 4. Erwartete Resultate
 Test-ID | Eingabe | Erwartete Resultate
@@ -92,14 +150,72 @@ Test-ID | Eingabe | Erwartete Resultate
 2 | ----- | -----------
 3 | ----- | -----------
 4 | ----- | -----------
+5 | ----- | -----------
+6 | ----- | -----------
+7 | ----- | -----------
+8 | ----- | -----------
+9 | ----- | -----------
+10 | ----- | -----------
+11 | ----- | -----------
+12 | ----- | -----------
+13 | ----- | -----------
+14 | ----- | -----------
+15 | ----- | -----------
+16 | ----- | -----------
+17 | ----- | -----------
+18 | ----- | -----------
+19 | ----- | -----------
+20 | ----- | -----------
+21 | ----- | -----------
+22 | ----- | -----------
+23 | ----- | -----------
+24 | ----- | -----------
+25 | ----- | -----------
+26 | ----- | -----------
+27 | ----- | -----------
+28 | ----- | -----------
+29 | ----- | -----------
+30 | ----- | -----------
+31 | ----- | -----------
+32 | ----- | -----------
+33 | ----- | -----------
 
 ## 5. Durchführung und Protokollierung
-Test-ID | Ausgeführt von | Datum | Resultat
--------- | ----- | ----- | -----------
-1 | ----- | 24.06.2024 | -----------
-2 | ----- | 24.06.2024 | -----------
-3 | ----- | 24.06.2024 | -----------
-4 | ----- | 24.06.2024 | -----------
+Test-ID | Ausgeführt von | Datum | Protokollierung | Resultat
+-------- | ----- | ----- | ----------- | -----------
+1 | ----- | 24.06.2024 | ----------- | -----------
+2 | ----- | 24.06.2024 | ----------- | -----------
+3 | ----- | 24.06.2024 | ----------- | -----------
+4 | ----- | 24.06.2024 | ----------- | -----------
+5 | ----- | 24.06.2024 | ----------- | -----------
+6 | ----- | 24.06.2024 | ----------- | -----------
+7 | ----- | 24.06.2024 | ----------- | -----------
+8 | ----- | 24.06.2024 | ----------- | -----------
+9 | ----- | 24.06.2024 | ----------- | -----------
+10 | ----- | 24.06.2024 | ----------- | -----------
+11 | ----- | 24.06.2024 | ----------- | -----------
+12 | ----- | 24.06.2024 | ----------- | -----------
+13 | ----- | 24.06.2024 | ----------- | -----------
+14 | ----- | 24.06.2024 | ----------- | -----------
+15 | ----- | 24.06.2024 | ----------- | -----------
+16 | ----- | 24.06.2024 | ----------- | -----------
+17 | ----- | 24.06.2024 | ----------- | -----------
+18 | ----- | 24.06.2024 | ----------- | -----------
+19 | ----- | 24.06.2024 | ----------- | -----------
+20 | ----- | 24.06.2024 | ----------- | -----------
+21 | ----- | 24.06.2024 | ----------- | -----------
+22 | ----- | 24.06.2024 | ----------- | -----------
+23 | ----- | 24.06.2024 | ----------- | -----------
+24 | ----- | 24.06.2024 | ----------- | -----------
+25 | ----- | 24.06.2024 | ----------- | -----------
+26 | ----- | 24.06.2024 | ----------- | -----------
+27 | ----- | 24.06.2024 | ----------- | -----------
+28 | ----- | 24.06.2024 | ----------- | -----------
+29 | ----- | 24.06.2024 | ----------- | -----------
+30 | ----- | 24.06.2024 | ----------- | -----------
+31 | ----- | 24.06.2024 | ----------- | -----------
+32 | ----- | 24.06.2024 | ----------- | -----------
+33 | ----- | 24.06.2024 | ----------- | -----------
 
 
 # Sicherheitskonzept
