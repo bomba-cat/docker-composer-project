@@ -3,7 +3,14 @@ services:
     image: gitlab/gitlab-ce:latest
     container_name: gitlab
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'gitlab.docker.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.docker.com'
+        gitlab_rails['lfs_enabled'] = true
+        gitlab_rails['gitlab_shell_ssh_port'] = 22
+      POSTGRES_USER: gitlab
+      POSTGRES_PASSWORD: /run/secrets/password
     depends_on:
       - gitlab_db
       - gitlab_redis
