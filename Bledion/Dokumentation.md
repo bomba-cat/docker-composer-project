@@ -1,5 +1,7 @@
 # Dokumentation `docker-compose`
+
 <hr>
+
 ## Inhaltsverzeichnis
 - Informieren
 - Planen
@@ -8,7 +10,9 @@
 - Kontrollieren
 - Auswerten
 <hr>
+
 ## Informieren
+
 ### Die Images
 - `gitlab/gitlab-ce:latest`
 - `postgres:latest`
@@ -259,7 +263,9 @@ Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
 <hr>
 ## Kontrollieren
 <hr>
+
 ## Auswerten
+
 ### Arbeits Journal
 | Datum        | Jan                       | Mykhaylo                | Bledion |
 | ----------- | ------------------------- | ----------------------- | ------- |
