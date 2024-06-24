@@ -149,17 +149,17 @@ Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 ### 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
-1 | ----- | -----------
-2 | Browser & Terminal | "sudo docker-compose up -d", "sudo docker-compose down"
-3 | ----- | -----------
+1 | Terminal | `sudo docker-compose up -d`, `sudo docker-compose down`, `docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password`
+2 | Terminal | `sudo docker-compose up -d`, `sudo docker-compose down`
+3 | Browser & Terminal | Anmelden und neuen Account erstellen
 4 | Browser & Terminal | Im Browser anmelden
 
 ### 4. Erwartete Resultate
 Test-ID | Eingabe & Schritte | Erwartete Resultate
 -------- | ----- | -----------
-1 | ------------ | ------------
+1 | Container starten, Einloggen als root, Externen Login einschalten, Container löschen und wieder starten | Die Daten sollen Persisten gespeichert werden
 2 | Container erstellen, Daten / Konfiguration ändern, Container löschen, Container erneut erstellen | Daten wurden Persistent gespeichert
-3 | ------------ | ------------
+3 | Container starten, neuen login erstellen, repository erstellen | Neuer Account wurde erstellt, Repository/Projekt wurde erstellt
 4 | Container starten und mit Nutzerdaten anmelden | App funktioniert, läuft auf dem richtigen Port und erfolgreicher Login
 <hr>
 
@@ -168,9 +168,9 @@ Test-ID | Eingabe & Schritte | Erwartete Resultate
 ### 1. Durchführung und Protokollierung
 Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 -------- | ----- | ----- | ----------- | -----------
-1 | Bledion | 24.06.2024 | ----------- | -----------
+1 | Bledion | 24.06.2024 | Mann konnte das Passwort vom `root` user bekommen und sich mit dem auch anmelden und die Einstellungen erfolgreich ändern | Daten wurden Persistent gespeichert
 2 | Jan | 24.06.2024 | Wenn man z.B. die Startseite oder Dateien in Nextcloud ändert oder hinzufügt, man danach die Container mit dem "sudo docker-compose down" Befehl löscht, werden die Daten und Änderungen nach einem erneuten Start der Container immernoch angezeigt. | Daten wurden Persistent gespeichert
-3 | Bledion | 24.06.2024 | ------------ | ------------
+3 | Bledion | 24.06.2024 | Ich konnte einen neuen Benutzer erstellen und mich mit dem auch einloggen und repositories erstellen | Neuer Account wurde erstellt, Repository/Projekt wurde erstellt
 4 | Jan | 24.06.2024 | Mit Passwort und Nutzernamen anmelden und installieren. | App funktioniert, läuft auf dem richtigen Port und erfolgreicher Login
 
 ### Docker compose dateien
@@ -179,7 +179,7 @@ Name | Datei
 Abgabe | [docker-compose.yaml](src/docker-compose.yaml)
 Bledion | [docker-compose.yaml](Bledion/docker-compose.yaml)
 Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
-Mykhaylo | [docker-compose.yaml](Mykhaylo/docker-compose.yaml), [docker-compose portainer.yaml](Mykhaylo/docker-compose portainer.yaml)
+Mykhaylo | [docker-compose.yaml](Mykhaylo/docker-compose.yaml), [docker-compose-portainer.yaml]("Mykhaylo/docker-compose portainer.yaml"")
 <hr>
 
 ## Kontrollieren
