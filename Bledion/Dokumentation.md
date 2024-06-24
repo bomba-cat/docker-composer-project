@@ -1,18 +1,15 @@
 # Dokumentation `docker-compose`
-
+<hr>
 ## Inhaltsverzeichnis
-
 - Informieren
 - Planen
 - Entscheiden
 - Reaslisieren
 - Kontrollieren
 - Auswerten
-
+<hr>
 ## Informieren
-
 ### Die Images
-
 - `gitlab/gitlab-ce:latest`
 - `postgres:latest`
 - `redis:latest`
@@ -22,7 +19,6 @@
 - `portainer:latest`
 
 ### Container Relationen
-
 Relationen | Braucht
 ---------- | -------
 gitlab | gitlab_db, gitlab_redis
@@ -33,7 +29,6 @@ portainer | -
 ### Environment Variables
 
 #### Allgemein
-
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
 MYSQL_ROOT_PASSWORD | `/run/secrets/password` | Mysql root passwort
@@ -41,14 +36,12 @@ MYSQL_PASSWORD | `/run/secrets/password` | Mysql user passwort
 POSTGRESS_PASSWORD | `/run/secrets/password` | Postgres passwort
 
 #### Git, Postgres, Redis
-
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
 GITLAB_OMNIBUS_CONFIG | external_url 'http://gitlab.docker.com', gitlab_rails['lfs_enabled'] = true, gitlab_rails['gitlab_shell_ssh_port'] = 22 | Gitlab Server and Rails info
 POSTGRES_USER | gitlab | Postgres username
 
 #### Mediawiki, Mysql
-
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
 MYSQL_ | MEDIAWIKI_DB_ | mediawiki hat die env variablen von MYSQL auf MEDIAWIKI gewechselt
@@ -56,48 +49,37 @@ MYSQL_USER | mediawiki | Benutzername
 MYSQL_DATABASE | mediawiki | Datenbank name
 
 #### Nextcloud, Mysql
-
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
 MYSQL_DATABASE | nextcloud | Datenbank name
 MYSQL_USER | nextcloud | Benutzername
 MYSQL_HOST | nextcloud_db | Datenbank host
-
+<hr>
 ## Planen
-
 ### Bilder
-
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
 # Arbeitsplanung und Aufgabenteilung
-
 <img src="https://github.com/mykhaylo-zhovkevych/docker-composer-project/assets/148889468/63d281f2-4ace-41bf-8668-babc5c86171e" height="400" width="auto">
 
 
 ### Arbeitsplanung
-
 In dem Systemdiagramm können wir sehen, dass wir die Anforderungen analysiert und alles auf vier Container aufgeteilt haben. Am Ende werden wir all diese Infrastruktur zusammenbauen, sodass wir sie auf einer Arbeitsmaschine testen können, was die endgültige Testung und Umsetzung des Ganzen vereinfacht.
 
 ### Aufgabenteilung
-
 MediaWiki wurde von Mykhaylo realisiert und getestet, NextCloud von Jan und GitLab von Bledion. Portainer haben wir entschieden, am Ende gemeinsam zu machen, aber Mykhaylo hat es umgesetzt und die zugehörigen Datenbanken wird jeder für seinen Container selbst erstellen.
 Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von Jan ausgefühlt. Die Dokumentation wurde hauptsächlich von Bledion geführt und zusammengefasst, zusätzlich haben Jan und Mykhaylo die Umgebungsvariablen und Images zugeordnet. Die Journale hat jeder für sich selbst geführt und das Sicherheitskonzept wurde von Mykhaylo erstellt.
 
-
+<hr>
 ## Entscheiden
-
 ### Sicherheitskonzept 
-
 #### Einleitung
-
 - **Zweck und Umfang**: Der Zweck dieses Sicherheitskonzepts ist es, die Bedrohungen in den Diensten des Informatik-KMU zu minimieren.
 - **Hintergrund**: Informatik-KMU will eine Infrastruktur mit MediaWiki, Nextcloud und Gitlab aufbauen, die mit Portainer verwaltet werden kann und eine persistente Datenspeicherung gewährleistet.
 
 ### Risikobewertung und Analyse
-
 #### Bedrohungsanalyse
-
 | Bedrohung            | Beschreibung |
 |----------------------|--------------|
 | Unbefugter Zugriff   | Unbefugte Personen könnten versuchen, auf MediaWiki, Nextcloud oder Gitlab zuzugreifen. |
@@ -106,7 +88,6 @@ Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von
 | Schwache Authentifizierung | Schwache Passwörter könnten es Angreifern ermöglichen, Zugang zu den Systemen zu erlangen. |
 
 #### Risikobewertung
-
 | Risiko              | Wahrscheinlichkeit | Potenzieller Schaden |
 |---------------------|--------------------|----------------------|
 | Unbefugter Zugriff  | Mittel             | Hoch                 |
@@ -115,9 +96,7 @@ Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von
 | Schwache Authentifizierung | Mittel      | Hoch                 |
 
 ### Sicherheitsrichtlinien und -verfahren
-
 #### Richtlinien
-
 Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU schützen:
 
 1. **Zugriffskontrollen**: Implementierung strenger Zugriffskontrollen für alle Dienste.
@@ -126,7 +105,6 @@ Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU
 4. **Sicherheitsupdates**: Regelmässige Updates und Patches für alle Systeme und Anwendungen.
 
 #### Verfahren
-<hr>
 Die Verfahren zur Umsetzung der Sicherheitsrichtlinien umfassen:
 
 1. **Einrichtung von Zugriffskontrollen**:
@@ -240,7 +218,7 @@ Test-ID | Eingabe | Erwartete Resultate
 25 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 26 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 27 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
-
+<hr>
 ## Realisieren
 ### 1. Durchführung und Protokollierung
 Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
@@ -277,9 +255,10 @@ Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 Name | Datei
 Abgabe | [docker-compose.yaml](src/docker-compose.yaml)
 Bledion | [docker-compose.yaml](Bledion/docker-compose.yaml)
-Jan | [docker-compose.yaml]()
+Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
+<hr>
 ## Kontrollieren
-
+<hr>
 ## Auswerten
 ### Arbeits Journal
 | Datum        | Jan                       | Mykhaylo                | Bledion |
