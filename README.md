@@ -94,17 +94,11 @@ Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 20 | Nextcloud | Benutzer testen (Login)
 21 | Mediawiki | Benutzer testen (Login)
 22 | Portainer | Benutzer testen (Login)
-23 | Gitlab | Sicherheit testen (Passwörter)
-24 | Nextcloud | Sicherheit testen (Passwörter)
-25 | Mediawiki | Sicherheit testen (Passwörter)
-26 | Portainer | Sicherheit testen (Passwörter)
-27 | gitlab_db (postgres) | Berechtigungen testen (DB)
-28 | nextcloud_db (MySQL) | Berechtigungen testen (DB)
-29 | mediawiki_db (MySQL) | Berechtigungen testen (DB)
-30 | Gitlab | Ressourcen testen
-31 | Nextcloud | Ressourcen testen
-32 | Mediawiki | Ressourcen testen
-33 | Portainer | Ressourcen testen
+23 | Gitlab, Nextcloud, Mediawiki, Portainer | Sicherheit testen (Passwörter)
+24 | Gitlab | Ressourcen testen
+25 | Nextcloud | Ressourcen testen
+26 | Mediawiki | Ressourcen testen
+27 | Portainer | Ressourcen testen
 
 ## 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
@@ -136,52 +130,40 @@ Test-ID | Testmittel | Testmethoden
 25 | ----- | -----------
 26 | ----- | -----------
 27 | ----- | -----------
-28 | ----- | -----------
-29 | ----- | -----------
-30 | ----- | -----------
-31 | ----- | -----------
-32 | ----- | -----------
-33 | ----- | -----------
 
 ## 4. Erwartete Resultate
 Test-ID | Eingabe | Erwartete Resultate
 -------- | ----- | -----------
-1 | ----- | -----------
-2 | ----- | -----------
-3 | ----- | -----------
-4 | ----- | -----------
-5 | ----- | -----------
-6 | ----- | -----------
-7 | ----- | -----------
-8 | ----- | -----------
-9 | ----- | -----------
-10 | ----- | -----------
-11 | ----- | -----------
-12 | ----- | -----------
-13 | ----- | -----------
-14 | ----- | -----------
-15 | ----- | -----------
-16 | ----- | -----------
-17 | ----- | -----------
-18 | ----- | -----------
-19 | ----- | -----------
-20 | ----- | -----------
-21 | ----- | -----------
-22 | ----- | -----------
-23 | ----- | -----------
-24 | ----- | -----------
-25 | ----- | -----------
-26 | ----- | -----------
-27 | ----- | -----------
-28 | ----- | -----------
-29 | ----- | -----------
-30 | ----- | -----------
-31 | ----- | -----------
-32 | ----- | -----------
-33 | ----- | -----------
+1 | ----- | Daten wurden Persistent gespeichert
+2 | ----- | Daten wurden Persistent gespeichert
+3 | ----- | Daten wurden Persistent gespeichert
+4 | ----- | Daten wurden Persistent gespeichert
+5 | ----- | Daten wurden Persistent gespeichert
+6 | ----- | Daten wurden Persistent gespeichert
+7 | ----- | Daten wurden Persistent gespeichert
+8 | ----- | Daten wurden Persistent gespeichert
+9 | ----- | Daten wurden Persistent gespeichert
+10 | ----- | Daten wurden Persistent gespeichert
+11 | ----- | Nextcloud und Mediawiki können mit Gitlab kommunizieren
+12 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
+13 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
+14 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
+15 | ----- | App funktioniert und läuft auf dem richtigen Port
+16 | ----- | App funktioniert und läuft auf dem richtigen Port
+17 | ----- | App funktioniert und läuft auf dem richtigen Port
+18 | ----- | App funktioniert und läuft auf dem richtigen Port
+19 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
+20 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
+21 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
+22 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
+23 | ----- | Passwörter werden von einer externen Datei mitgegeben
+24 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
+25 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
+26 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
+27 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 
 ## 5. Durchführung und Protokollierung
-Test-ID | Ausgeführt von | Datum | Protokollierung | Resultat
+Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 -------- | ----- | ----- | ----------- | -----------
 1 | ----- | 24.06.2024 | ----------- | -----------
 2 | ----- | 24.06.2024 | ----------- | -----------
@@ -210,12 +192,6 @@ Test-ID | Ausgeführt von | Datum | Protokollierung | Resultat
 25 | ----- | 24.06.2024 | ----------- | -----------
 26 | ----- | 24.06.2024 | ----------- | -----------
 27 | ----- | 24.06.2024 | ----------- | -----------
-28 | ----- | 24.06.2024 | ----------- | -----------
-29 | ----- | 24.06.2024 | ----------- | -----------
-30 | ----- | 24.06.2024 | ----------- | -----------
-31 | ----- | 24.06.2024 | ----------- | -----------
-32 | ----- | 24.06.2024 | ----------- | -----------
-33 | ----- | 24.06.2024 | ----------- | -----------
 
 # Sicherheitskonzept 
 
