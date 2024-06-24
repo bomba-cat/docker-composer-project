@@ -1,32 +1,45 @@
+<div style="border: 1px solid black; padding: 10px;">
+
 # Images
-- gitlab/gitlab-ce:laters
-- mysql:latest
-- nextcloud:latest
-- mediawiki:latest
-- portainer:latest
+- `gitlab/gitlab-ce:latest`
+- `mysql:latest`
+- `nextcloud:latest`
+- `mediawiki:latest`
+- `portainer:latest`
 
 # Passwords
-The passwords are set as a env variable on the host system so the guest systems can rely on those
+The passwords are set as environment variables on the host system so the guest systems can rely on those.
 
 # Plan
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
 # Environment Variables
+
 ## System, Host
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
-MYSQL_ROOT_PASSWORD | KUZ35_:3434FEfwew*1 | Mysql root password
-MYSQL_PASSWORD | KUZ35_:3434FEfwew*1 | Mysql user password
+MYSQL_ROOT_PASSWORD | `KUZ35_:3434FEfwew*1` | Mysql root password
+MYSQL_PASSWORD | `KUZ35_:3434FEfwew*1` | Mysql user password
+
 ## Git
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
 ## Mediawiki, Mysql
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
 ## Nextcloud, Mysql
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
+</div>
+
 
 # Arbeitsplanung und Aufgabenteilung
 
