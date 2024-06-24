@@ -19,8 +19,8 @@
 - `portainer:latest`
 
 ### Container Relationen
-- | Braucht
-- | -------
+Relationen | Braucht
+---------- | -------
 gitlab | gitlab_db, gitlab_redis
 mediawiki | mediawiki_db
 nextcloud | nextcloud_db
