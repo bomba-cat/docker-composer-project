@@ -1,11 +1,12 @@
 #!/bin/bash
 
-read -p "Enter folder: " folder
+read -p "Enter password: " pw
 
-echo Changing directory..
-cd $folder
+echo Changing directory
+cd src/
 
-echo "KUZ35_:3434FEfwew*1" > ./password.txt
+echo Setting password secret
+echo $pw > ./password.txt
 
 echo Running docker-compose...
 docker-compose up -d | echo --- && echo --- && echo Error executing: docker-compose up -d
