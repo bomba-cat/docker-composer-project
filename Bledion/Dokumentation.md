@@ -274,7 +274,7 @@ Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
 
 ## Kontrollieren
 
-
+Wir haben unsere Arbeitszeiten und Pakete sehr gut einhalten können und es gab kaum eine abweichen von dem Arbeitsplan. Unser code hatte einige probleme am anfang, wobei wir diese zusammen lösen konnten. Dazu habe ich ein Skript gemacht welches die Containers, Volumes und Netzwerke mit `docker-compose` erstellt und alles aufgesetzt hat.
 
 <hr>
 
