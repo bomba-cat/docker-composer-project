@@ -59,8 +59,11 @@ MYSQL_DATABASE | nextcloud | Datenbank name
 MYSQL_USER | nextcloud | Benutzername
 MYSQL_HOST | nextcloud_db | Datenbank host
 <hr>
+
 ## Planen
+
 ### Bilder
+
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
@@ -76,13 +79,17 @@ MediaWiki wurde von Mykhaylo realisiert und getestet, NextCloud von Jan und GitL
 Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von Jan ausgefühlt. Die Dokumentation wurde hauptsächlich von Bledion geführt und zusammengefasst, zusätzlich haben Jan und Mykhaylo die Umgebungsvariablen und Images zugeordnet. Die Journale hat jeder für sich selbst geführt und das Sicherheitskonzept wurde von Mykhaylo erstellt.
 
 <hr>
+
 ## Entscheiden
+
 ### Sicherheitskonzept 
+
 #### Einleitung
 - **Zweck und Umfang**: Der Zweck dieses Sicherheitskonzepts ist es, die Bedrohungen in den Diensten des Informatik-KMU zu minimieren.
 - **Hintergrund**: Informatik-KMU will eine Infrastruktur mit MediaWiki, Nextcloud und Gitlab aufbauen, die mit Portainer verwaltet werden kann und eine persistente Datenspeicherung gewährleistet.
 
 ### Risikobewertung und Analyse
+
 #### Bedrohungsanalyse
 | Bedrohung            | Beschreibung |
 |----------------------|--------------|
@@ -100,6 +107,7 @@ Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von
 | Schwache Authentifizierung | Mittel      | Hoch                 |
 
 ### Sicherheitsrichtlinien und -verfahren
+
 #### Richtlinien
 Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU schützen:
 
@@ -223,7 +231,9 @@ Test-ID | Eingabe | Erwartete Resultate
 26 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 27 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 <hr>
+
 ## Realisieren
+
 ### 1. Durchführung und Protokollierung
 Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 -------- | ----- | ----- | ----------- | -----------
@@ -261,7 +271,9 @@ Abgabe | [docker-compose.yaml](src/docker-compose.yaml)
 Bledion | [docker-compose.yaml](Bledion/docker-compose.yaml)
 Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
 <hr>
+
 ## Kontrollieren
+
 <hr>
 
 ## Auswerten
