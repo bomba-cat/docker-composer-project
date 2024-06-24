@@ -15,12 +15,32 @@ services:
     shm_size: '256m'
     networks:
       - main
+      - gitlab
 
+  postgresql:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: gitlabhq_production
+      POSTGRES_USER: gitlab
+      POSTGRES_PASSWORD: gitlabpass
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    networks:
+      - gitlab
+
+  redis:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    networks:
+      - gitlab
 
 volumes:
   gitlab_config:
   gitlab_log:
   gitlab_data:
+  gitlab_postgresql_data:
+  gitlab_redis_data:
 
 networks:
   main:
@@ -28,4 +48,6 @@ networks:
   mediawiki:
     driver: bridge
   nextcloud:
+    driver: bridge
+  gitlab:
     driver: bridge
