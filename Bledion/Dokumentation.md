@@ -55,7 +55,8 @@ MYSQL_DATABASE | nextcloud | Datenbank name
 MYSQL_USER | nextcloud | Benutzername
 MYSQL_HOST | nextcloud_db | Datenbank host
 
-# Plan
+## Planen
+### Bilder
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
@@ -63,16 +64,14 @@ MYSQL_HOST | nextcloud_db | Datenbank host
 <img src="https://github.com/mykhaylo-zhovkevych/docker-composer-project/assets/148889468/63d281f2-4ace-41bf-8668-babc5c86171e" height="400" width="auto">
 
 
-## Arbeitsplanung
+### Arbeitsplanung
 In dem Systemdiagramm können wir sehen, dass wir die Anforderungen analysiert und alles auf vier Container aufgeteilt haben. Am Ende werden wir all diese Infrastruktur zusammenbauen, sodass wir sie auf einer Arbeitsmaschine testen können, was die endgültige Testung und Umsetzung des Ganzen vereinfacht.
 
-## Aufgabenteilung
+### Aufgabenteilung
 MediaWiki wurde von Mykhaylo realisiert und getestet, NextCloud von Jan und GitLab von Bledion. Portainer haben wir entschieden, am Ende gemeinsam zu machen, aber Mykhaylo hat es umgesetzt und die zugehörigen Datenbanken wird jeder für seinen Container selbst erstellen.
 Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von Jan ausgefühlt. Die Dokumentation wurde hauptsächlich von Bledion geführt und zusammengefasst, zusätzlich haben Jan und Mykhaylo die Umgebungsvariablen und Images zugeordnet. Die Journale hat jeder für sich selbst geführt und das Sicherheitskonzept wurde von Mykhaylo erstellt.
 
-
-# Journal
-
+### Arbeits Journal
 | Datum        | Jan                       | Mykhaylo                | Bledion |
 | ----------- | ------------------------- | ----------------------- | ------- |
 | 17.06.2024  | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Mein Ziel war es den Code für die Installation von Nextcloud zu schreiben. Ich habe den Code schon fast fertig. Ich muss noch den MySQL Server korrekt aufsetzen. Ich hatte Probleme beim erstellen des Codes, da er nicht richtig ausgeführt wurde. <br><br><table><tr><td>Problemen</td></tr></table> | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Ich habe meine Ziele erreicht und eine Docker Compose Datei erstellt, die zwei Images umfasst: MySQL und MediaWiki. Zwar habe ich die Konfiguration noch nicht abschliessend überprüft, aber nach der ersten Ausführung in meiner Linux-Umgebung funktioniert sie einwandfrei.<br><br><table><tr><td>Problemen</td></tr></table> | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Ich habe mich mit dem Gitlab auseinander gesetzt und weiss jetzt alles was ich dazu brauche. Ich habe auch einen Run script erstellt um die dockers zu ausführen und schemas gezeichnet<br><br><table><tr><td>Problemen</td></tr></table> |
@@ -80,14 +79,61 @@ Das Testkonzept, das die Testprotokollierung und den Testplan umfasst, wurde von
 | 24.06.2024  | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Mein Ziel war es den Testplan weiter auszuarbeiten, sowie diesen fertig zu stellen. Ich hatte ein wenig Probleme beim Erstellen des Testplans, jedoch habe ich dies nach einer Absprache mit meinem Team verstanden und konnte diesen umsetzen. <br><br><table><tr><td>Problemen</td></tr></table> | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Zusammenfassung<br><br><table><tr><td>Problemen</td></tr></table> | Einleitung ... <br><br><table><tr><td>Erwarteten Ziele</td><td>Erreichte Ziele</td></tr></table><br>Zusammenfassung<br><br><table><tr><td>Problemen</td></tr></table> |
 
 
-# Testkonzept
+## Entscheiden
+### Sicherheitskonzept 
+#### Einleitung
+- **Zweck und Umfang**: Der Zweck dieses Sicherheitskonzepts ist es, die Bedrohungen in den Diensten des Informatik-KMU zu minimieren.
+- **Hintergrund**: Informatik-KMU will eine Infrastruktur mit MediaWiki, Nextcloud und Gitlab aufbauen, die mit Portainer verwaltet werden kann und eine persistente Datenspeicherung gewährleistet.
 
-## 1. Testumfeld und Randbedingungen
+### Risikobewertung und Analyse
+#### Bedrohungsanalyse
+| Bedrohung            | Beschreibung |
+|----------------------|--------------|
+| Unbefugter Zugriff   | Unbefugte Personen könnten versuchen, auf MediaWiki, Nextcloud oder Gitlab zuzugreifen. |
+| Datenverlust         | Daten könnten durch Hardware-Ausfälle, Software-Fehler oder menschliches Versagen verloren gehen. |
+| Malware und Viren    | Schadsoftware könnte in die Systeme eindringen und Daten korrumpieren oder stehlen. |
+| Schwache Authentifizierung | Schwache Passwörter könnten es Angreifern ermöglichen, Zugang zu den Systemen zu erlangen. |
+
+#### Risikobewertung
+| Risiko              | Wahrscheinlichkeit | Potenzieller Schaden |
+|---------------------|--------------------|----------------------|
+| Unbefugter Zugriff  | Mittel             | Hoch                 |
+| Datenverlust        | Niedrig            | Sehr Hoch            |
+| Malware und Viren   | Mittel             | Hoch                 |
+| Schwache Authentifizierung | Mittel      | Hoch                 |
+
+### Sicherheitsrichtlinien und -verfahren
+#### Richtlinien
+Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU schützen:
+
+1. **Zugriffskontrollen**: Implementierung strenger Zugriffskontrollen für alle Dienste.
+2. **Datensicherung**: Regelmässige Backups aller wichtigen Daten und Konfigurationen.
+3. **Malwareschutz**: Installation und regelmässige Aktualisierung von Antiviren- und Antimalware-Software.
+4. **Sicherheitsupdates**: Regelmässige Updates und Patches für alle Systeme und Anwendungen.
+
+#### Verfahren
+Die Verfahren zur Umsetzung der Sicherheitsrichtlinien umfassen:
+
+1. **Einrichtung von Zugriffskontrollen**:
+    - Verwendung starker Passwörter und Zwei-Faktor-Authentifizierung.
+2. **Datensicherung**:
+    - Einrichtung eines automatisierten Backup-Systems mit Cronjob für Linux.
+    - Regelmässige Überprüfung der Backups auf Vollständigkeit und Integrität.
+3. **Malwareschutz**:
+    - Installation von Antiviren-Software auf WM.
+    - Regelmässige Durchführung von Malware-Scans und Überprüfung der Systeme.
+4. **Sicherheitsupdates**:
+    - Regelmässige Überprüfung auf verfügbare Updates und Patches.
+    - Testen und Einspielen von Updates in einer kontrollierten Umgebung, bevor sie auf die Produktionssysteme angewendet werden.
+
+Durch die Umsetzung dieser Sicherheitsrichtlinien und -verfahren kann das Informatik-KMU eine robuste und sichere Infrastruktur für MediaWiki, Nextcloud und Gitlab gewährleisten, die mit Portainer überwacht und verwaltet wird.
+
+#### 1. Testumfeld und Randbedingungen
 Hardware | Netzwerkeinstellungen | Abhändigkeiten von anderen Systemen
 -------- | --------------------- | -----------------------------------
 Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehreren VMs und Container nach Bedarf erstellt werden können. | Wir haben es so eingeebnet, dass es drei Netzwerke sein werden, der Grund dafür ist die Sicherheit, denn es gibt ein Brückennetzwerk, das MediaWiki Nextcloud und Gitlab umfasst, das die innere Kommunikation und zwischen Containern ermöglicht, aber die Datenbanken für MediaWiki und Nextcloud sind voneinander getrennt und können nur mit bestimmten Containern kommunizieren.| 
 
-## 2. Testplan
+### 2. Testplan
 Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 -------- | ----- | -----------
 1 | gitlab_config (Gitlab) | Persistenz testen (Volumes)
@@ -118,7 +164,7 @@ Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 26 | Mediawiki | Ressourcen testen
 27 | Portainer | Ressourcen testen
 
-## 3. Testmittel und -methoden
+### 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
 1 | ----- | -----------
@@ -149,7 +195,7 @@ Test-ID | Testmittel | Testmethoden
 26 | ----- | -----------
 27 | ----- | -----------
 
-## 4. Erwartete Resultate
+### 4. Erwartete Resultate
 Test-ID | Eingabe | Erwartete Resultate
 -------- | ----- | -----------
 1 | ----- | Daten wurden Persistent gespeichert
@@ -180,7 +226,9 @@ Test-ID | Eingabe | Erwartete Resultate
 26 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 27 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
 
-## 5. Durchführung und Protokollierung
+## Realisieren
+
+### 5. Durchführung und Protokollierung
 Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 -------- | ----- | ----- | ----------- | -----------
 1 | ----- | 24.06.2024 | ----------- | -----------
@@ -210,63 +258,3 @@ Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 25 | ----- | 24.06.2024 | ----------- | -----------
 26 | ----- | 24.06.2024 | ----------- | -----------
 27 | ----- | 24.06.2024 | ----------- | -----------
-
-# Sicherheitskonzept 
-
-## Einleitung
-- **Zweck und Umfang**: Der Zweck dieses Sicherheitskonzepts ist es, die Bedrohungen in den Diensten des Informatik-KMU zu minimieren.
-- **Hintergrund**: Informatik-KMU will eine Infrastruktur mit MediaWiki, Nextcloud und Gitlab aufbauen, die mit Portainer verwaltet werden kann und eine persistente Datenspeicherung gewährleistet.
-
-## Risikobewertung und Analyse
-
-### Bedrohungsanalyse
-
-| Bedrohung            | Beschreibung |
-|----------------------|--------------|
-| Unbefugter Zugriff   | Unbefugte Personen könnten versuchen, auf MediaWiki, Nextcloud oder Gitlab zuzugreifen. |
-| Datenverlust         | Daten könnten durch Hardware-Ausfälle, Software-Fehler oder menschliches Versagen verloren gehen. |
-| Malware und Viren    | Schadsoftware könnte in die Systeme eindringen und Daten korrumpieren oder stehlen. |
-| Schwache Authentifizierung | Schwache Passwörter könnten es Angreifern ermöglichen, Zugang zu den Systemen zu erlangen. |
-
-### Risikobewertung
-
-| Risiko              | Wahrscheinlichkeit | Potenzieller Schaden |
-|---------------------|--------------------|----------------------|
-| Unbefugter Zugriff  | Mittel             | Hoch                 |
-| Datenverlust        | Niedrig            | Sehr Hoch            |
-| Malware und Viren   | Mittel             | Hoch                 |
-| Schwache Authentifizierung | Mittel      | Hoch                 |
-
-## Sicherheitsrichtlinien und -verfahren
-
-### Richtlinien
-
-Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU schützen:
-
-1. **Zugriffskontrollen**: Implementierung strenger Zugriffskontrollen für alle Dienste.
-2. **Datensicherung**: Regelmässige Backups aller wichtigen Daten und Konfigurationen.
-3. **Malwareschutz**: Installation und regelmässige Aktualisierung von Antiviren- und Antimalware-Software.
-4. **Sicherheitsupdates**: Regelmässige Updates und Patches für alle Systeme und Anwendungen.
-
-### Verfahren
-
-Die Verfahren zur Umsetzung der Sicherheitsrichtlinien umfassen:
-
-1. **Einrichtung von Zugriffskontrollen**:
-    - Verwendung starker Passwörter und Zwei-Faktor-Authentifizierung.
-2. **Datensicherung**:
-    - Einrichtung eines automatisierten Backup-Systems mit Cronjob für Linux.
-    - Regelmässige Überprüfung der Backups auf Vollständigkeit und Integrität.
-3. **Malwareschutz**:
-    - Installation von Antiviren-Software auf WM.
-    - Regelmässige Durchführung von Malware-Scans und Überprüfung der Systeme.
-4. **Sicherheitsupdates**:
-    - Regelmässige Überprüfung auf verfügbare Updates und Patches.
-    - Testen und Einspielen von Updates in einer kontrollierten Umgebung, bevor sie auf die Produktionssysteme angewendet werden.
-
-Durch die Umsetzung dieser Sicherheitsrichtlinien und -verfahren kann das Informatik-KMU eine robuste und sichere Infrastruktur für MediaWiki, Nextcloud und Gitlab gewährleisten, die mit Portainer überwacht und verwaltet wird.
-
-
-
-
-
