@@ -141,95 +141,26 @@ Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehrere
 ### 2. Testplan
 Test-ID | Container-, Volume-, Netzwerkname | Was wird getestet
 -------- | ----- | -----------
-1 | gitlab_config (Gitlab) | Persistenz testen (Volumes)
-2 | gitlab_log (Gitlab) | Persistenz testen (Volumes)
-3 | gitlab_data (Gitlab) | Persistenz testen (Volumes)
-4 | gitlab_db (Gitlab) | Persistenz testen (Volumes)
-5 | gitlab_redis (Gitlab) | Persistenz testen (Volumes)
-6 | nextcloud (Nextcloud) | Persistenz testen (Volumes)
-7 | nextcloud_db (Nextcloud) | Persistenz testen (Volumes)
-8 | mediawiki (Mediawiki) | Persistenz testen (Volumes)
-9 | mediawiki_db (Mediawiki) | Persistenz testen (Volumes)
-10 | portainer_data (Portainer) | Persistenz testen (Volumes)
-11 | main | Netzwerke testen
-12 | gitlab | Netzwerke testen
-13 | nextcloud | Netzwerke testen
-14 | mediawiki | Netzwerke testen
-15 | Gitlab | App testen
-16 | Nextcloud | App testen
-17 | Mediawiki | App testen
-18 | Portainer | App testen
-19 | Gitlab | Benutzer testen (Login)
-20 | Nextcloud | Benutzer testen (Login)
-21 | Mediawiki | Benutzer testen (Login)
-22 | Portainer | Benutzer testen (Login)
-23 | Gitlab, Nextcloud, Mediawiki, Portainer | Sicherheit testen (Passwörter)
-24 | Gitlab | Ressourcen testen
-25 | Nextcloud | Ressourcen testen
-26 | Mediawiki | Ressourcen testen
-27 | Portainer | Ressourcen testen
+1 | Gitlab | Persistenz testen (Volumes)
+2 | Nextcloud | Persistenz testen (Volumes)
+3 | Gitlab | App testen (Login)
+4 | Nextcloud | App testen (Login)
 
 ### 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
 1 | ----- | -----------
-2 | ----- | -----------
+2 | Browser & Terminal | "sudo docker-compose up -d", "sudo docker-compose down"
 3 | ----- | -----------
-4 | ----- | -----------
-5 | ----- | -----------
-6 | ----- | -----------
-7 | ----- | -----------
-8 | ----- | -----------
-9 | ----- | -----------
-10 | ----- | -----------
-11 | ----- | -----------
-12 | ----- | -----------
-13 | ----- | -----------
-14 | ----- | -----------
-15 | ----- | -----------
-16 | ----- | -----------
-17 | ----- | -----------
-18 | ----- | -----------
-19 | ----- | -----------
-20 | ----- | -----------
-21 | ----- | -----------
-22 | ----- | -----------
-23 | ----- | -----------
-24 | ----- | -----------
-25 | ----- | -----------
-26 | ----- | -----------
-27 | ----- | -----------
+4 | Browser & Terminal | Im Browser anmelden
 
 ### 4. Erwartete Resultate
-Test-ID | Eingabe | Erwartete Resultate
+Test-ID | Eingabe & Schritte | Erwartete Resultate
 -------- | ----- | -----------
-1 | ----- | Daten wurden Persistent gespeichert
-2 | ----- | Daten wurden Persistent gespeichert
-3 | ----- | Daten wurden Persistent gespeichert
-4 | ----- | Daten wurden Persistent gespeichert
-5 | ----- | Daten wurden Persistent gespeichert
-6 | ----- | Daten wurden Persistent gespeichert
-7 | ----- | Daten wurden Persistent gespeichert
-8 | ----- | Daten wurden Persistent gespeichert
-9 | ----- | Daten wurden Persistent gespeichert
-10 | ----- | Daten wurden Persistent gespeichert
-11 | ----- | Nextcloud und Mediawiki können mit Gitlab kommunizieren
-12 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
-13 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
-14 | ----- | Es kann nicht mit anderen Netzwerken kommuniziert werden
-15 | ----- | App funktioniert und läuft auf dem richtigen Port
-16 | ----- | App funktioniert und läuft auf dem richtigen Port
-17 | ----- | App funktioniert und läuft auf dem richtigen Port
-18 | ----- | App funktioniert und läuft auf dem richtigen Port
-19 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
-20 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
-21 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
-22 | ----- | Erfolgreicher login mit vorgegebenem Benutzernamen und Passwort
-23 | ----- | Passwörter werden von einer externen Datei mitgegeben
-24 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
-25 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
-26 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
-27 | ----- | Ressourcen wurden korrekt begrenzt und eingeteilt
+1 | ------------ | ------------
+2 | Container erstellen, Daten / Konfiguration ändern, Container löschen, Container erneut erstellen | Daten wurden Persistent gespeichert
+3 | ------------ | ------------
+4 | Container starten und mit Nutzerdaten anmelden | App funktioniert, läuft auf dem richtigen Port und erfolgreicher Login
 <hr>
 
 ## Realisieren
@@ -237,33 +168,10 @@ Test-ID | Eingabe | Erwartete Resultate
 ### 1. Durchführung und Protokollierung
 Test-ID | Ausgeführt von | Datum | Protokollierung | Resultate
 -------- | ----- | ----- | ----------- | -----------
-1 | ----- | 24.06.2024 | ----------- | -----------
-2 | ----- | 24.06.2024 | ----------- | -----------
-3 | ----- | 24.06.2024 | ----------- | -----------
-4 | ----- | 24.06.2024 | ----------- | -----------
-5 | ----- | 24.06.2024 | ----------- | -----------
-6 | ----- | 24.06.2024 | ----------- | -----------
-7 | ----- | 24.06.2024 | ----------- | -----------
-8 | ----- | 24.06.2024 | ----------- | -----------
-9 | ----- | 24.06.2024 | ----------- | -----------
-10 | ----- | 24.06.2024 | ----------- | -----------
-11 | ----- | 24.06.2024 | ----------- | -----------
-12 | ----- | 24.06.2024 | ----------- | -----------
-13 | ----- | 24.06.2024 | ----------- | -----------
-14 | ----- | 24.06.2024 | ----------- | -----------
-15 | ----- | 24.06.2024 | ----------- | -----------
-16 | ----- | 24.06.2024 | ----------- | -----------
-17 | ----- | 24.06.2024 | ----------- | -----------
-18 | ----- | 24.06.2024 | ----------- | -----------
-19 | ----- | 24.06.2024 | ----------- | -----------
-20 | ----- | 24.06.2024 | ----------- | -----------
-21 | ----- | 24.06.2024 | ----------- | -----------
-22 | ----- | 24.06.2024 | ----------- | -----------
-23 | ----- | 24.06.2024 | ----------- | -----------
-24 | ----- | 24.06.2024 | ----------- | -----------
-25 | ----- | 24.06.2024 | ----------- | -----------
-26 | ----- | 24.06.2024 | ----------- | -----------
-27 | ----- | 24.06.2024 | ----------- | -----------
+1 | Bledion | 24.06.2024 | ----------- | -----------
+2 | Jan | 24.06.2024 | Wenn man z.B. die Startseite oder Dateien in Nextcloud ändert oder hinzufügt, man danach die Container mit dem "sudo docker-compose down" Befehl löscht, werden die Daten und Änderungen nach einem erneuten Start der Container immernoch angezeigt. | Daten wurden Persistent gespeichert
+3 | Bledion | 24.06.2024 | ------------ | ------------
+4 | Jan | 24.06.2024 | Mit Passwort und Nutzernamen anmelden und installieren. | App funktioniert, läuft auf dem richtigen Port und erfolgreicher Login
 
 ### Docker compose dateien
 Name | Datei
