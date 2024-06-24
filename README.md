@@ -3,12 +3,12 @@
 <hr>
 
 ## Inhaltsverzeichnis
-- Informieren
-- Planen
-- Entscheiden
-- Reaslisieren
-- Kontrollieren
-- Auswerten
+- [Informieren](#Informieren)
+- [Planen](#Planen)
+- [Entscheiden](#Entscheiden)
+- [Reaslisieren](#Realisieren)
+- [Kontrollieren](#Kontrollieren)
+- [Auswerten](#Auswerten)
 <hr>
 
 ## Informieren
