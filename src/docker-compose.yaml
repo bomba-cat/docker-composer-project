@@ -19,17 +19,29 @@ services:
     networks:
       - main
       - gitlab
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 8196M
 
   gitlab_db:
     image: postgres:latest
     environment:
-      POSTGRES_DB: gitlabhq_production
+      POSTGRES_DB: gitserver
       POSTGRES_USER: gitlab
-      POSTGRES_PASSWORD: gitlabpass
+      POSTGRES_PASSWORD: /run/secrets/password
     volumes:
       - gitlab_db:/var/lib/postgresql/data
     networks:
       - gitlab
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 8196M
+    secrets:
+      - password
 
   gitlab_redis:
     image: redis:latest
@@ -37,6 +49,11 @@ services:
       - gitlab_redis:/data
     networks:
       - gitlab
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 8196M
 
   nextcloud_db:
     image: mysql:latest
@@ -45,12 +62,19 @@ services:
     volumes:
       - nextcloud_db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=/run/secrets/password
+      - MYSQL_PASSWORD=/run/secrets/password
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
     networks:
       - nextcloud
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4096M
+    secrets:
+      - password
 
   nextcloud:
     image: nextcloud:latest
@@ -62,13 +86,20 @@ services:
     volumes:
       - nextcloud:/var/www/html
     environment:
-      - MYSQL_PASSWORD=
+      - MYSQL_PASSWORD=/run/secrets/password
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
+      - MYSQL_HOST=nextcloud_db
     networks:
       - main
       - nextcloud
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4096M
+    secrets:
+      - password
 
   mediawiki:
     image: mediawiki:latest
@@ -79,7 +110,7 @@ services:
       - MEDIAWIKI_DB_HOST=mediawiki_db
       - MEDIAWIKI_DB_NAME=mediawiki
       - MEDIAWIKI_DB_USER=mediawiki
-      - MEDIAWIKI_DB_PASSWORD=
+      - MEDIAWIKI_DB_PASSWORD=/run/secrets/password
     volumes:
       - mediawiki:/var/www/html/images
     depends_on:
@@ -87,30 +118,54 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.50'
-          memory: 500M
+          cpus: '0.5'
+          memory: 512M
     networks:
       - main
       - mediawiki
+    secrets:
+      - password
 
   mediawiki_db:
     image: mysql:latest
     container_name: mediawiki_db
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=/run/secrets/password
       - MYSQL_DATABASE=mediawik
       - MYSQL_USER=mediawiki
-      - MYSQL_PASSWORD=
+      - MYSQL_PASSWORD=/run/secrets/password
     volumes:
       - mediawiki_db:/var/lib/mysql
     deploy:
       resources:
         limits:
-          cpus: '0.50'
-          memory: 500M
+          cpus: '1.0'
+          memory: 1024M
     networks:
       - mediawiki
+    secrets:
+      - password
 
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - main
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
+
+secrets:
+  password:
+    file: ./password.txt
 
 volumes:
   gitlab_config:
@@ -122,6 +177,8 @@ volumes:
   nextcloud_db:
   mediawiki:
   mediawiki_db:
+  portainer_data:
+    driver: local
 
 networks:
   main:

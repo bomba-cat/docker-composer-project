@@ -5,10 +5,7 @@ read -p "Enter folder: " folder
 echo Changing directory..
 cd $folder
 
-echo Setting env Variables...
-set MYSQL_ROOT_PASSWORD=KUZ35_:3434FEfwew*1
-set MYSQL_PASSWORD=KUZ35_:3434FEfwew*1
-set MEDIAWIKI_DB_PASSWORD=KUZ35_:3434FEfwew*1
+echo "KUZ35_:3434FEfwew*1" > ./password.txt
 
 echo Running docker-compose...
 docker-compose up -d | echo --- && echo --- && echo Error executing: docker-compose up -d
