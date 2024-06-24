@@ -217,7 +217,7 @@ Test-ID | Ausgeführt von | Datum | Protokollierung | Resultat
 32 | ----- | 24.06.2024 | ----------- | -----------
 33 | ----- | 24.06.2024 | ----------- | -----------
 
-# Sicherkeitskonzept
+# Sicherheitskonzept 
 
 ## Einleitung
 - **Zweck und Umfang**: Der Zweck dieses Sicherheitskonzepts ist es, die Bedrohungen in den Diensten des Informatik-KMU zu minimieren.
@@ -238,11 +238,10 @@ Test-ID | Ausgeführt von | Datum | Protokollierung | Resultat
 
 | Risiko              | Wahrscheinlichkeit | Potenzieller Schaden |
 |---------------------|--------------------|----------------------|
-| Unbefugter Zugriff  | Hoch               | Hoch                 |
+| Unbefugter Zugriff  | Mittel             | Hoch                 |
 | Datenverlust        | Niedrig            | Sehr Hoch            |
 | Malware und Viren   | Mittel             | Hoch                 |
-| Netzwerkangriffe    | Mittel bis Hoch    | Hoch                 |
-| Schwache Authentifizierung | Hoch        | Hoch                 |
+| Schwache Authentifizierung | Mittel      | Hoch                 |
 
 ## Sicherheitsrichtlinien und -verfahren
 
@@ -252,7 +251,7 @@ Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU
 
 1. **Zugriffskontrollen**: Implementierung strenger Zugriffskontrollen für alle Dienste.
 2. **Datensicherung**: Regelmässige Backups aller wichtigen Daten und Konfigurationen.
-3. **Malwareschutz**: Installation und regelmäßige Aktualisierung von Antiviren- und Antimalware-Software.
+3. **Malwareschutz**: Installation und regelmässige Aktualisierung von Antiviren- und Antimalware-Software.
 4. **Sicherheitsupdates**: Regelmässige Updates und Patches für alle Systeme und Anwendungen.
 
 ### Verfahren
@@ -260,20 +259,16 @@ Die folgenden Sicherheitsrichtlinien sollen die Infrastruktur des Informatik-KMU
 Die Verfahren zur Umsetzung der Sicherheitsrichtlinien umfassen:
 
 1. **Einrichtung von Zugriffskontrollen**:
-    - Verwendung starker Passwörter und Zwei-Faktor-Authentifizierung (2FA).
-
+    - Verwendung starker Passwörter und Zwei-Faktor-Authentifizierung.
 2. **Datensicherung**:
     - Einrichtung eines automatisierten Backup-Systems mit Cronjob für Linux.
     - Regelmässige Überprüfung der Backups auf Vollständigkeit und Integrität.
-
 3. **Malwareschutz**:
     - Installation von Antiviren-Software auf WM.
     - Regelmässige Durchführung von Malware-Scans und Überprüfung der Systeme.
-
 4. **Sicherheitsupdates**:
     - Regelmässige Überprüfung auf verfügbare Updates und Patches.
     - Testen und Einspielen von Updates in einer kontrollierten Umgebung, bevor sie auf die Produktionssysteme angewendet werden.
-
 
 Durch die Umsetzung dieser Sicherheitsrichtlinien und -verfahren kann das Informatik-KMU eine robuste und sichere Infrastruktur für MediaWiki, Nextcloud und Gitlab gewährleisten, die mit Portainer überwacht und verwaltet wird.
 
