@@ -1,32 +1,45 @@
+<div style="border: 1px solid black; padding: 10px;">
+
 # Images
-- gitlab/gitlab-ce:laters
-- mysql:latest
-- nextcloud:latest
-- mediawiki:latest
-- portainer:latest
+- `gitlab/gitlab-ce:latest`
+- `mysql:latest`
+- `nextcloud:latest`
+- `mediawiki:latest`
+- `portainer:latest`
 
 # Passwords
-The passwords are set as a env variable on the host system so the guest systems can rely on those
+The passwords are set as environment variables on the host system so the guest systems can rely on those.
 
 # Plan
 <a><img src="img/Networks.png" alt="Error Loading image" height="400"/></a>
 <img src="img/System.png" alt="Error Loading image" height="400">
 
 # Environment Variables
+
 ## System, Host
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
-MYSQL_ROOT_PASSWORD | KUZ35_:3434FEfwew*1 | Mysql root password
-MYSQL_PASSWORD | KUZ35_:3434FEfwew*1 | Mysql user password
+MYSQL_ROOT_PASSWORD | `KUZ35_:3434FEfwew*1` | Mysql root password
+MYSQL_PASSWORD | `KUZ35_:3434FEfwew*1` | Mysql user password
+
 ## Git
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
 ## Mediawiki, Mysql
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
 ## Nextcloud, Mysql
+
 VARIABLE | VALUE | DESCRIPTION
 -------- | ----- | -----------
+
+</div>
+
 
 # Arbeitsplanung und Aufgabenteilung
 
@@ -55,20 +68,36 @@ Hardware | Netzwerkeinstellungen | Abhändigkeiten von anderen Systemen
 Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehreren VMs und Container nach Bedarf erstellt werden können. | Wir haben es so eingeebnet, dass es drei Netzwerke sein werden, der Grund dafür ist die Sicherheit, denn es gibt ein Brückennetzwerk, das MediaWiki Nextcloud und Gitlab umfasst, das die innere Kommunikation und zwischen Containern ermöglicht, aber die Datenbanken für MediaWiki und Nextcloud sind voneinander getrennt und können nur mit bestimmten Containern kommunizieren.| 
 
 ## 2. Testplan
-... | ... | ...
+Test-ID | Containername | Testinhalt
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 3. Testmittel und -methoden
-... | ... | ...
+Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 4. Erwartete Resultate
-... | ... | ...
+Test-ID | Eingabe | Erwartete Resultate
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 5. Durchführung und Protokollierung
-... | ... | ...
--------- | ----- | -----------
+Test-ID | Ausgeführt von | Datum | Resultat
+-------- | ----- | ----- | -----------
+1 | ----- | 24.06.2024 | -----------
+2 | ----- | 24.06.2024 | -----------
+3 | ----- | 24.06.2024 | -----------
+4 | ----- | 24.06.2024 | -----------
 
 
 # Sicherheitskonzept
