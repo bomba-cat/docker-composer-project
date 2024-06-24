@@ -70,18 +70,34 @@ Dieses Projekt erfordert eine Infrastruktur mit einem Server, in dem die mehrere
 ## 2. Testplan
 Test-ID | Ausgeführt von | Datum
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 3. Testmittel und -methoden
 Test-ID | Testmittel | Testmethoden
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 4. Erwartete Resultate
 Test-ID | Bemerkung | Erwartete Resultate
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 ## 5. Durchführung und Protokollierung
 Test-ID | Eingabe | Resultat
 -------- | ----- | -----------
+1 | ----- | -----------
+2 | ----- | -----------
+3 | ----- | -----------
+4 | ----- | -----------
 
 
 # Sicherheitskonzept
