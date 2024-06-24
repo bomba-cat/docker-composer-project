@@ -180,7 +180,7 @@ Abgabe | [docker-compose.yaml](src/docker-compose.yaml)
 Bledion | [docker-compose.yaml](Bledion/docker-compose.yaml)
 Jan | [docker-compose.yaml](Jan/docker-compose.yaml)
 Mykhaylo | [docker-compose.yaml](Mykhaylo/docker-compose.yaml)
-Mykhaylo | [docker-compose-portainer.yaml]("Mykhaylo/docker-compose portainer.yaml")
+Mykhaylo | [docker-compose-portainer.yaml](Mykhaylo/docker-compose-portainer.yaml)
 <hr>
 
 ## Kontrollieren
